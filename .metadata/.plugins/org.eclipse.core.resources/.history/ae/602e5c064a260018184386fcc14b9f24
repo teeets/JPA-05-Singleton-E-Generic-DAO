@@ -1,0 +1,32 @@
+package br.com.fiap.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@SequenceGenerator(name="Veiculo", sequenceName="SEQ_VEICULO", allocationSize=1)
+@Table(name="TB_VEICULO")
+public class Veiculo {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="Veiculo")
+	@Column(name="COD_VEICULO")
+	private int cod;
+	
+	@Column(name="DE_PLACA", nullable=false, length=9)
+	private String placa;
+	
+	@Column(name="DS_COR", nullable=false, length=20)
+	private String cor;
+	
+	@Column(name="NR_ANO")
+	private int ano;
+	
+	
+
+}

@@ -1,0 +1,39 @@
+package br.com.fiap.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name="tb_motorista")
+public class Motorista {
+		
+	@Id
+	@Column(name="nr_carteira")
+	private int numeroCarteira;
+	
+	@Column(name="nm_motorista", length=150, nullable=false)
+	private String nomeMotorista;
+
+	@Column(name="dt_nascimento")
+	@Temporal(value=TemporalType.DATE)
+	private Date nascimento;
+	
+	@Column(name="fl_carteira")
+	@Lob
+	private byte[] carteira;
+	
+	@Column(name="ds_genero")
+	@Enumerated(EnumType.STRING)
+	private Genero genero;
+	
+	
+}

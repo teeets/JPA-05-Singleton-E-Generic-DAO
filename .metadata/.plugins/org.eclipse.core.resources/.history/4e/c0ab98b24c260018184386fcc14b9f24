@@ -1,0 +1,28 @@
+package br.com.fiap.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@SequenceGenerator(name="motorista", sequenceName="SEQ_MOTORISTA", allocationSize=1)
+@Table(name="tb_motorista")
+public class Motorista {
+		
+	@Id
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="motorista")
+	@Column(name="nr_carteira")
+	private int numeroCarteira;
+	private String nomeMotorista;
+	private Date nascimento;
+	private byte[] carteira;
+	private Genero genero;
+	
+	
+}

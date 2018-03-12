@@ -1,0 +1,16 @@
+package br.com.fiap.entity;
+
+
+public class Veiculo {
+	
+	private int cod;
+	
+	private String placa;
+	
+	private String cor;
+	
+	private int ano;
+	
+	
+
+}

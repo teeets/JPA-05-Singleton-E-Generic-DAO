@@ -1,0 +1,19 @@
+package br.com.fiap.entity;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
+
+@Entity
+@SequenceGenerator(name="motorista")"SEQ_MOTORISTA" 
+public class Motorista {
+
+	private int numeroCarteira;
+	private String nomeMotorista;
+	private Date nascimento;
+	private byte[] carteira;
+	private Genero genero;
+	
+	
+}
